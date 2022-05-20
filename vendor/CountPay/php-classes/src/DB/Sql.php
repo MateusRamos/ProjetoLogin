@@ -1,12 +1,12 @@
 <?php 
 
-namespace Hcode\DB;
+namespace CountPay\DB;
 
 class Sql {
 
 	const HOSTNAME = "127.0.0.1";
 	const USERNAME = "root";
-	const PASSWORD = "root";
+	const PASSWORD = "";
 	const DBNAME = "projetologin";
 
 	private $conn;
