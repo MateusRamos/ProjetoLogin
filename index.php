@@ -1,20 +1,21 @@
 <?php 
 
-require_once("vendor/autoload.php");
+require_once("vendor/autoload.php"); //Trazendo as dependencias do vender
 
-$app = new \Slim\Slim();
+use \Slim\Slim;			//Chamando as dependencias necessarias;
+use \CountPay\Page;		//Chamando as dependencias necessarias;
+
+$app = new Slim();		//Incia as rotas da aplicação Slim apartir do que vem na URL;
 
 $app->config('debug', true);
 
 $app->get('/', function() {
     
-	$sql = new CountPay\DB\Sql();
-
-	$results=$sql->select("SELECT * FROM tb_usuario");
-
-	echo json_encode($results);
+	$page = new Page();
+	
+	$page->setTpl("index");
 });
 
-$app->run();
+$app->run();	//Roda toda a aplicação depois de lida e formulada;
 
  ?>
