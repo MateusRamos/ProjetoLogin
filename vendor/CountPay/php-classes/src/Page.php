@@ -12,13 +12,13 @@ class Page  {
         "data"=>[]
     ];
 
-    public function __construct($opts = array())   {  //Construct criando o header da pagina a ser mostrado;
+    public function __construct($opts = array(), $tpl_dir = "/views/")   {  //Construct criando o header da pagina a ser mostrado;
 
         $this->options = array_merge($this->defaults, $opts);  //Sobrepondo array de data criado como defualt;
 
 
         $config = array(        //Criando array que passa as confings para o rain tpl;
-            "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"]."/views/",         //Apontando para a pasta onde terá o HTML;
+            "tpl_dir"       => $_SERVER["DOCUMENT_ROOT"].$tpl_dir,         //Apontando para a pasta onde terá o HTML;
             "cache_dir"     => $_SERVER["DOCUMENT_ROOT"]."/views-cache/",   //Apontando para a pasta onde terá os cache;
             "debug"         => false                                        //Negando geração de arquivos de debug;
         );
